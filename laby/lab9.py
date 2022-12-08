@@ -119,14 +119,14 @@ tlo2.paste(obraz1, (0, 0), a)
 obraz1kopia = obraz1.copy()
 obraz1kopia.paste(tlo, (0, 0), a)
 
-plt.subplot(1, 2, 1)
-plt.imshow(tlo2)
-plt.axis('off')
-plt.subplot(1, 2, 2)
-plt.imshow(obraz1kopia)
-plt.axis('off')
-plt.savefig('fig2.png')
-plt.show()
+# plt.subplot(1, 2, 1)
+# plt.imshow(tlo2)
+# plt.axis('off')
+# plt.subplot(1, 2, 2)
+# plt.imshow(obraz1kopia)
+# plt.axis('off')
+# plt.savefig('fig2.png')
+# plt.show()
 
 
 
