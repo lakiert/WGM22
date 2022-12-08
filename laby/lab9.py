@@ -22,6 +22,8 @@ difference = ImageChops.difference(obraz2, obraz3)
 # difference.show()
 
 
+
+
 # zad 2
 
 tryb1 = obraz3.convert('CMYK')
@@ -29,19 +31,19 @@ tryb2 = obraz3.convert('YCbCr')
 tryb3 = obraz3.convert('HSV')
 
 
-plt.figure(figsize=(16, 8))
-plt.subplot(1, 3, 1)
-plt.title('RGB')
-plt.imshow(tryb1)
-plt.axis('off')
-plt.subplot(1, 3, 2)
-plt.title('YCbCr')
-plt.imshow(tryb2)
-plt.axis('off')
-plt.subplot(1, 3, 3)
-plt.title('HSV')
-plt.imshow(tryb3)
-plt.axis('off')
+# plt.figure(figsize=(16, 8))
+# plt.subplot(1, 3, 1)
+# plt.title('RGB')
+# plt.imshow(tryb1)
+# plt.axis('off')
+# plt.subplot(1, 3, 2)
+# plt.title('YCbCr')
+# plt.imshow(tryb2)
+# plt.axis('off')
+# plt.subplot(1, 3, 3)
+# plt.title('HSV')
+# plt.imshow(tryb3)
+# plt.axis('off')
 # plt.savefig('fig1.png')
 # plt.show()
 
@@ -86,19 +88,45 @@ plt.axis('off')
 # plt.show()
 
 
-h, s, v = tryb3.split()
-plt.figure()
-plt.subplot(1, 3, 1)
-plt.title('H')
-plt.imshow(h, 'gray')
+# h, s, v = tryb3.split()
+# plt.figure()
+# plt.subplot(1, 3, 1)
+# plt.title('H')
+# plt.imshow(h, 'gray')
+# plt.axis('off')
+# plt.subplot(1, 3, 2)
+# plt.title('S')
+# plt.imshow(s, 'gray')
+# plt.axis('off')
+# plt.subplot(1, 3, 3)
+# plt.title('V')
+# plt.imshow(v, 'gray')
+# plt.axis('off')
+# plt.savefig('hsv.png')
+# plt.show()
+
+
+
+
+# zad 3
+
+obraz4 = Image.open("obraz4.png")
+tlo = obraz4.resize(obraz1.size, 1)
+
+tlo2 = tlo.copy()
+tlo2.paste(obraz1, (0, 0), a)
+
+obraz1kopia = obraz1.copy()
+obraz1kopia.paste(tlo, (0, 0), a)
+
+plt.subplot(1, 2, 1)
+plt.imshow(tlo2)
 plt.axis('off')
-plt.subplot(1, 3, 2)
-plt.title('S')
-plt.imshow(s, 'gray')
+plt.subplot(1, 2, 2)
+plt.imshow(obraz1kopia)
 plt.axis('off')
-plt.subplot(1, 3, 3)
-plt.title('V')
-plt.imshow(v, 'gray')
-plt.axis('off')
-plt.savefig('hsv.png')
+plt.savefig('fig2.png')
 plt.show()
+
+
+
